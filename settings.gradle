@@ -1,0 +1,2 @@
+include ':app', ':crosspromote'
+rootProject.name='Tap ads'

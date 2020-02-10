@@ -7,8 +7,8 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.taptap.crosspromote.ads.CrossPromote
 import com.taptap.crosspromote.ads.listeners.NativeAdListener
-import com.taptap.crosspromote.ads.type.banner.BannerAd
-import com.taptap.crosspromote.ads.type.native.NativeAd
+import com.taptap.crosspromote.ads.type.TapBannerAd
+import com.taptap.crosspromote.ads.type.TapNativeAd
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -35,12 +35,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun showBanner() {
         Log.d(localClassName, "showBanner")
-        val banner: BannerAd = BannerAd()
-        banner.nativeAdListener = object : NativeAdListener {
+        val tapBanner: TapBannerAd =
+            TapBannerAd()
+        tapBanner.nativeAdListener = object : NativeAdListener {
 
             override fun onRequestSuccessAd() {
                 Log.d(localClassName, "onRequestSuccessAd")
-                var view: View? = banner.getAdNative()
+                var view: View? = tapBanner.getAdNative()
                 view?.let {
                     adViewBanner.addView(view)
                 }
@@ -56,17 +57,18 @@ class MainActivity : AppCompatActivity() {
                 Log.d(localClassName, "onClickAd")
             }
         }
-        banner.loadAd()
+        tapBanner.loadAd()
     }
 
     private fun showNative() {
         Log.d(localClassName, "showBanner")
-        val nativeAd: NativeAd = NativeAd()
-        nativeAd.nativeAdListener = object : NativeAdListener {
+        val tapNativeAd: TapNativeAd =
+            TapNativeAd()
+        tapNativeAd.nativeAdListener = object : NativeAdListener {
 
             override fun onRequestSuccessAd() {
                 Log.d(localClassName, "onRequestSuccessAd")
-                var view: View? = nativeAd.getAdNative()
+                var view: View? = tapNativeAd.getAdNative()
                 view?.let {
                     adViewNative.addView(view)
                 }
@@ -82,6 +84,6 @@ class MainActivity : AppCompatActivity() {
                 Log.d(localClassName, "onClickAd")
             }
         }
-        nativeAd.loadAd()
+        tapNativeAd.loadAd()
     }
 }

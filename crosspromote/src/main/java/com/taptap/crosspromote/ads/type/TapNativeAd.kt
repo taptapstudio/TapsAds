@@ -1,16 +1,15 @@
-package com.taptap.crosspromote.ads.type.native
+package com.taptap.crosspromote.ads.type
 
 import android.view.LayoutInflater
 import android.view.View
 import com.bumptech.glide.Glide
 import com.taptap.crosspromote.ads.R
-import com.taptap.crosspromote.ads.type.BaseNative
 import kotlinx.android.synthetic.main.tap_ads_natice_banner.view.appCta
 import kotlinx.android.synthetic.main.tap_ads_natice_banner.view.appTitle
 import kotlinx.android.synthetic.main.tap_ads_native.view.*
 import timber.log.Timber
 
-class NativeAd : BaseNative() {
+class TapNativeAd : BaseNative() {
 
     override var typeAd: String = TYPE_NATIVE
 
@@ -41,5 +40,9 @@ class NativeAd : BaseNative() {
 
         Timber.d("getAdNative: getAdShowgetAdShow%s", nativeAdDetail.toString())
         return nativeView
+    }
+
+    override fun loadAd() {
+        super.loadAd()
     }
 }

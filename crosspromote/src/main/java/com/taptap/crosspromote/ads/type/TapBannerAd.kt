@@ -1,15 +1,14 @@
-package com.taptap.crosspromote.ads.type.banner
+package com.taptap.crosspromote.ads.type
 
 import android.view.LayoutInflater
 import android.view.View
 import com.bumptech.glide.Glide
 import com.taptap.crosspromote.ads.R
-import com.taptap.crosspromote.ads.type.BaseNative
 import kotlinx.android.synthetic.main.tap_ads_natice_banner.view.*
 import timber.log.Timber
 
 
-class BannerAd : BaseNative() {
+class TapBannerAd : BaseNative() {
 
     override var typeAd: String = TYPE_BANNER
 

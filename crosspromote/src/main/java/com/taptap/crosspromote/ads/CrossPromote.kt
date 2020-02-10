@@ -51,6 +51,7 @@ object CrossPromote {
 
     fun setup(context: Context) {
         if (BuildConfig.DEBUG) {
+            expTime = TimeUnit.SECONDS.toMillis(50)
             Timber.plant(DebugTree())
             Timber.tag("CrossPromote")
         }

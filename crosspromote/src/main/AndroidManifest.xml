@@ -1,2 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.taptap.crosspromote.ads" />
+    package="com.taptap.crosspromote.ads">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application>
+        <provider
+            android:name=".CrossPromoteProvider"
+            android:authorities="${applicationId}.CrossPromote"
+            android:enabled="true"
+            android:exported="false" />
+    </application>
+
+</manifest>

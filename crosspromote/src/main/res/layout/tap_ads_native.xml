@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/bg_banner_ads"
-    android:layout_height="260dp">
+    android:layout_height="260dp"
+    android:background="@drawable/bg_banner_ads">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/media"
@@ -56,10 +56,10 @@
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="2dp"
-            android:textSize="13sp"
-            android:textStyle="bold"
             android:maxLength="45"
             android:maxLines="1"
+            android:textSize="13sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/cardView"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Chúng ta vẫn biết rằng, làm việc với một đoạn văn bản dễ đọc và rõ nghĩa dễ gây rối trí và cản trở việc tập trung vào yếu tố trình bày văn bản." />
@@ -92,13 +92,16 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="2dp"
             android:background="@drawable/btn_app_cta"
+            android:drawableEnd="@drawable/ic_cta_download"
+            android:drawableRight="@drawable/ic_cta_download"
+            android:drawablePadding="3dp"
             android:elevation="2dp"
-            android:paddingLeft="15dp"
-            android:paddingRight="15dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:text="@string/install_now"
             android:textColor="#fefefe"
             android:textSize="18sp"
-            android:translationZ="2dp"
+            android:translationZ="3dp"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

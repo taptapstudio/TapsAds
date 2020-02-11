@@ -1,6 +1,7 @@
 package com.taptap.crosspromote.ads
 
 import android.content.Context
+import android.util.Log
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.resource.bitmap.FitCenter
@@ -99,8 +100,6 @@ object CrossPromote {
 
     private fun loadImageToCache() {
         scope.launch(Main) {
-            //            val requestOptions: RequestOptions = RequestOptions
-//                .diskCacheStrategyOf(DiskCacheStrategy.ALL)
 
             val requestOptions =
                 RequestOptions().transform(FitCenter(), RoundedCorners(15)).diskCacheStrategy(
@@ -108,19 +107,29 @@ object CrossPromote {
                 )
             withContext(IO) {
                 listAppDetails.forEach {
-                    it.icon.url?.let { url ->
-                        Glide.with(mContext)
-                            .asBitmap()
-                            .load(url)
-                            .apply(requestOptions)
-                            .submit(64, 64)
+
+                    try {
+                        it.icon.url.let { url ->
+                            Glide.with(mContext)
+                                .asBitmap()
+                                .load(url)
+                                .apply(requestOptions)
+                                .submit(64, 64)
+                        }
+                    }catch (e:Exception){
+                        Timber.e(e)
                     }
-                    it.media.url?.let { url ->
-                        Glide.with(mContext)
-                            .asBitmap()
-                            .load(url)
-                            .apply(requestOptions)
-                            .submit(500,244)
+
+                    try {
+                        it.media.url.let { url ->
+                            Glide.with(mContext)
+                                .asBitmap()
+                                .load(url)
+                                .apply(requestOptions)
+                                .submit(500,244)
+                        }
+                    }catch (e:Exception){
+                        Timber.e(e)
                     }
                 }
             }

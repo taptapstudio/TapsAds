@@ -39,7 +39,7 @@ abstract class BaseNative {
     open fun loadAd() {
         Timber.tag("CrossNative").d("loadAd")
         onRequest()
-        var appDetailAd = CrossPromote.getAdShow()
+        val appDetailAd = CrossPromote.getAdShow()
 
         if (appDetailAd == null) {
             onRequestFailed()
